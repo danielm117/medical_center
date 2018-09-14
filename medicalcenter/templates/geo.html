@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <form class="" id="form" action="{% url 'mc:calculate_index' %}" method="post" enctype="multipart/form-data" style="display: grid;grid-template-columns: 173px;">
+            {% csrf_token %}
+            <div class="">
+                <label for="">Radius (KM)</label>
+                <input type="number" name="radius" value="0" min="0" reqired>
+            </div>
+            <div class="">
+                <label for="">Latitude</label>
+                <input type="text" name="lat" value="" reqired>
+            </div>
+            <div class="">
+                <label for="">Longitude</label>
+                <input type="text" name="lon" value="" reqired>
+            </div>
+            <input type="submit" name="" value="Submit">
+        </form>
+        <a href="{% url 'mc:result_list' %}">Show results history</a>
+
+    </body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        {% for result in result_list %}
+        <p style="color: red"> ----------------- SEARCH ----------------------</p>
+            <div class="">
+                Radio {{result.radius}} meters
+            </div>
+            <div class="">
+                Latitude {{result.initial_lat}}
+            </div>
+            <div class="">
+                Longitude {{result.initial_lon}}
+            </div>
+            <div class="">
+                Index {{result.index}}
+            </div>
+            <br>
+            POINTS
+            <div class="" style=" height:50px; overflow-y:scroll; border: 1px solid #bababa">
+                {% for coordinate in result.coordinate_set.all %}
+                <p>
+                    {{coordinate.lat}}, {{coordinate.lon}}
+                </p>
+                {% endfor %}
+            </div>
+            
+        {% endfor %}
+    </body>
+</html>
